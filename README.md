@@ -22,7 +22,7 @@ todos> npm start
 
 # How To Run The Tests
 
-todos> npm install
+todos> npm install  
 todos> npm run test
 
 # --------------------------------------------------
