@@ -1,45 +1,94 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# ASSIGNMENT REQUIREMENTS SUMMARY:
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+- Execute in a directory
+- Find "TODO" in files (assume for all caps only)
+- Produce list of ALL files' absolute paths for the hits
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+* In immediate dir
+* Or sub dir
+* Or sub-sub…. dir recursively, ad infinitum (assume as system resources allow)
 
----
+- No 3rd party libs in code logic (assume no npm installs)
+- No calls to system shell (assume no calls directly)
+- Cross-platform file access
 
-## Edit a file
+# System Requirements
+This is a Node.js application.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+# How To Run The Assignment
 
----
+todos> npm start
 
-## Create a file
+# How To Run The Tests
 
-Next, you’ll add a new file to this repository.
+todos> npm run test
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+# --------------------------------------------------
+# ORIGINAL ASSIGNMENT BRIEF:
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+# Developer Check-In #1
 
----
+This is a technical check-in for Software Engineers.
 
-## Clone a repository
+# Problem Statement
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+It's common to see `TODO`s in code. It's also common for `TODO`s to remain as to-dos for a long time. One way we can solve this problem is to have a service that runs through all files in a given directory and checks for any instances of the key-phrase `"TODO"`, flagging each one of them out for humans to continue working on them.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+# Challenge
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Write an application/script that when executed in a directory, produces a list of all files (using their absolute paths) containing the keyword `"TODO"` in them. The files can be in the immediate directory, or a sub-directory (or a sub-directory of the sub-directory, ad infinitum).
+
+# Example
+
+Given the following directory structure:
+
+```
+/path/to/your/dir
+  - somedir
+    - somemodule
+      - somefile.js
+      - someotherfile.js
+  - somedir2
+    - anotherdir
+      - yet_another_dir
+        - index.js
+      - index.js
+    - index.js
+  - somedir3
+    - another_file.js
+```
+
+Assuming your application runs at `/path/to/your/dir`, and assuming all of the files contains the text string `"TODO"`, the application should output something similar to:
+
+```
+/path/to/your/dir/somedir/somemodule/somefile.js
+/path/to/your/dir/somedir/somemodule/someotherfile.js
+/path/to/your/dir/somedir2/anotherdir/yet_another_dir/index.js
+/path/to/your/dir/somedir2/anotherdir/index.js
+/path/to/your/dir/somedir2/index.js
+/path/to/your/dir/somedir3/another_file.js
+```
+
+# Deliverables
+
+1. Link to code repository
+2. README.md with full instructions to achieve the above functionality
+3. Tests
+
+# Constraints/Other Things
+
+- The challenge is expected to take roughly 2 hours. If you find yourself with extra time, do think about how the quality of the application can be enhanced
+- Your code is evaluated not solely on the correctness of the code, but on software design principles as well.
+- You are free to publish/open-source your solution but please do not link back to this particular README.md 🙏🏼 (you are however free to use this in your own capacity according to [the current license](#license))
+- No third party libraries may be used for the code logic though you may use them in your tooling (if any) or tests
+- No calls to the system shell should be used (keep it cross-platform compatible!)
+- There is no time constraint for this exercise, take as long/short as you need/want to - ie **impress us in your own way**!
+- We use Node.js/Golang primarily - while it'd be nice if you implemented it in any of the two, you are **highly recommended to use the language you are strongest in/most fitting of this assignment**.
+- Your submitted code will be worked on during a pair programming session during an on-site interview should you be selected so... Don't copy and paste too much 😉
+
+# Cheers and all the best!
+
+# License
+
+Content is licensed under the [Creative Commons 4.0 (Non-Commercial, Attribution) license](https://creativecommons.org/licenses/by-nc-sa/4.0/) **AFTER** you've completed it.
