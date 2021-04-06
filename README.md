@@ -13,8 +13,8 @@
 - Cross-platform file access
 
 # System Requirements
-This is a Node.js application.
 
+This is a Node.js application.
 
 # How To Run The Assignment
 
@@ -22,9 +22,11 @@ todos> npm start
 
 # How To Run The Tests
 
+todos> npm install
 todos> npm run test
 
 # --------------------------------------------------
+
 # ORIGINAL ASSIGNMENT BRIEF:
 
 # Developer Check-In #1
