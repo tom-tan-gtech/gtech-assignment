@@ -2,21 +2,6 @@ const fs = require('fs');
 const fsPromises = require('fs').promises;
 const path = require('path');
 
-function getFiles(dir) {
-  let files = [];
-  const items = fs.readdirSync(dir);
-  items.forEach((item) => {
-    let fullPath = path.join(dir, item);
-    if (fs.lstatSync(fullPath).isDirectory()) {
-      const f = getFiles(fullPath);
-      files = files.concat(f);
-    } else {
-      files.push(fullPath);
-    }
-  });
-  return files;
-}
-
 async function getFilesAsync(dir) {
   let files = [];
   const items = await fsPromises.readdir(dir);
@@ -67,7 +52,6 @@ async function findInFolder(startFolder, searchTerm) {
   }
 }
 
-module.exports.getFiles = getFiles;
 module.exports.getFilesAsync = getFilesAsync;
 module.exports.readFile = readFile;
 module.exports.containsTerms = containsTerms;

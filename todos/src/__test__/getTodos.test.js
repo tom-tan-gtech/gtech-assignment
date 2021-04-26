@@ -11,11 +11,6 @@ const testFolder =
   '/Users/tom/Tom_MACFolders/Projects/find-todos/todos/testdir';
 const searchTerm = 'TODO';
 
-it('getFiles - returns 7 files', () => {
-  const files = getFiles(testFolder);
-  expect(files.length).toEqual(7);
-});
-
 it('getFilesAsync - returns 7 files async', async () => {
   const files = await getFilesAsync(testFolder);
   expect(files.length).toEqual(7);
